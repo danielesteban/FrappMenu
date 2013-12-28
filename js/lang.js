@@ -7,7 +7,9 @@ LANG = {
 		underGPL : 'Under a GPL license',
 		createNew : 'Create New Frapp',
 		name : 'Name',
-		create : 'Create'
+		create : 'Create',
+		repoURL : 'Repository URL',
+		add : 'Add'
 	},
 	es : {
 		createYourOwn : 'Crear una tuya',
@@ -17,6 +19,8 @@ LANG = {
 		underGPL : 'Bajo una licencia GPL',
 		createNew : 'Crear Nueva Frapp',
 		name : 'Nombre',
-		create : 'Crear'
+		create : 'Crear',
+		repoURL : 'URL del repositorio',
+		add : 'Añadir'
 	}
 };

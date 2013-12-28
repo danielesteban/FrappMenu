@@ -55,7 +55,25 @@ window.addEventListener('frapp.init', function() {
 		$('menu.frapps a').click(function(e) {
 			var li = $(e.target).parents('li').first();
 			if(li.attr('class') === 'add') {
-				//TODO!!
+				var modal = $(Handlebars.partials.add());
+				modal.on('hidden.bs.modal', function() {
+					$(this).remove();
+				});
+				modal.on('shown.bs.modal', function() {
+					$('input', this).first().focus();
+				});
+				$('form', modal).submit(function(e) {
+					e.stopPropagation();
+					e.preventDefault();
+					FRAPP.load({
+						repository : {
+							type : 'git',
+							url : e.target.url.value
+						}
+					});
+				});
+				$('body').append(modal);
+				modal.modal('show');
 			} else {
 				FRAPP.load(frapps[li.index()], {}, true);
 			}
