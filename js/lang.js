@@ -12,7 +12,7 @@ LANG = {
 		add : 'Add'
 	},
 	es : {
-		createYourOwn : 'Crear una tuya',
+		createYourOwn : 'Crea una propia',
 		all : 'Todas',
 		yourFrapps : 'Tus Frapps',
 		addMore : 'Añadir Más',
