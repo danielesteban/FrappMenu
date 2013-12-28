@@ -1,0 +1,21 @@
+{
+	"name" : "FrappsMenu",
+	"version" : "0.0.1",
+	"author" : "Daniel Esteban Nombela <dani@hellacoders.com>",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/danielesteban/FrappsMenu.git"
+	},
+	"window" : {
+		"title" : "Frapp"
+	},
+	"modules" : [
+		"jquery",
+		"bootstrap",
+		"handlebars",
+		"lang",
+		"less",
+		"session"
+	],
+	"main" : "index.html"
+}

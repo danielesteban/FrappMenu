@@ -1,0 +1,59 @@
+/* Main Layout */
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	overflow: hidden;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+}
+
+header {
+	padding-top: 30px;
+}
+
+section {
+	padding: 15px 0;
+}
+
+footer {
+	height: 60px;
+	text-align: center;
+	div.container {
+		border-top: 1px solid #ddd;
+		padding-top: 15px;
+	}
+}
+
+/* Frapps menu */
+menu.frapps {
+	list-style-type: none;
+	padding: 0;
+	margin: -10px;
+	li {
+		&, a {
+			float: left;
+		}
+		a {
+			text-align: center;
+			margin: 10px;
+			padding: 5px 10px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			cursor: pointer;
+			text-decoration: none;
+			min-height: 62px;
+			&:hover {
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+}

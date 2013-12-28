@@ -1,0 +1,33 @@
+<div id="wrap">
+	<header>
+		<div class="container">
+			<button class="pull-right btn btn-primary" onclick="FRAPPSMENU.create()">{{L 'createYourOwn'}}</button>
+			<ul class="nav nav-tabs">
+				<li class="active"><a>{{L 'all'}}</a></li>
+				<li><a>{{L 'yourFrapps'}}</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<menu class="frapps clearfix">
+				{{#each frapps}}
+					{{> frapp}}
+				{{/each}}
+				<li>
+					<a>
+						<span class="h3">{{i 'plus'}}</span>
+						<br>{{L 'addMore'}}
+					</a>
+				</li>
+			</menu>
+		</div>
+	</section>
+</div>
+<footer>
+	<div class="container">
+		<p class="text-muted">
+			<small>Frapps v{{version}} &nbsp;|&nbsp; Daniel Esteban Nombela {{i 'copyright-mark'}} {{year}} &nbsp;|&nbsp; {{L 'underGPL'}}</small>
+		</p>
+	</div>
+</footer>
