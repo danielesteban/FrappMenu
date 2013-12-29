@@ -32,10 +32,10 @@ MENU = {
 					if(li.attr('class') === 'add') MENU.add();	
 					else FRAPP.load(frapps[li.index()], {}, true);
 				});
+				$('header .nav li').removeClass('active');
 				$('header .nav li.' + (user ? 'yours' : 'all')).addClass('active');
 			};
 
-		$('header .nav li').removeClass('active');
 		if(!user) return render(MENU.frapps);
 		SESSION.signin(function() {
 			var frapps = [];
