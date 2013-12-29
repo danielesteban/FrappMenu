@@ -1,14 +1,21 @@
 FRAPPSMENU = {
+	modal : function(id) {
+		var modal = $(Handlebars.partials[id]());
+		modal.on('hidden.bs.modal', function() {
+			$(this).remove();
+		});
+		modal.on('shown.bs.modal', function() {
+			$('input', this).first().focus();
+		});
+		$('body').append(modal);
+		modal.modal('show');
+		return modal;
+	},
 	create : function() {
 		/* Show modal */
+		var self = this;
 		SESSION.signin(function() {
-			var modal = $(Handlebars.partials.create());
-			modal.on('hidden.bs.modal', function() {
-				$(this).remove();
-			});
-			modal.on('shown.bs.modal', function() {
-				$('input', this).first().focus();
-			});
+			var modal = self.modal('create');
 			$('form', modal).submit(function(e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -17,12 +24,25 @@ FRAPPSMENU = {
 					name : name
 				}, function(frapp) {
 					if(!frapp) return;
-					FRAPP.load(frapp, {}, true);
-					FRAPP.edit(frapp);
+					FRAPP.load(frapp, {}, true, function() {
+						FRAPP.edit(frapp);
+					});
 				});
 			});
-			$('body').append(modal);
-			modal.modal('show');
+		});
+	},
+	add : function() {
+		var modal = this.modal('add');
+		$('form', modal).submit(function(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			modal.modal('hide');
+			FRAPP.install({
+				repository : {
+					type : 'git',
+					url : e.target.url.value
+				}
+			}, {}, FRAPP.close);
 		});
 	}
 };
@@ -55,29 +75,8 @@ window.addEventListener('frapp.init', function() {
 		})).css('overflow', 'auto');
 		$('menu.frapps a').click(function(e) {
 			var li = $(e.target).parents('li').first();
-			if(li.attr('class') === 'add') {
-				var modal = $(Handlebars.partials.add());
-				modal.on('hidden.bs.modal', function() {
-					$(this).remove();
-				});
-				modal.on('shown.bs.modal', function() {
-					$('input', this).first().focus();
-				});
-				$('form', modal).submit(function(e) {
-					e.stopPropagation();
-					e.preventDefault();
-					FRAPP.load({
-						repository : {
-							type : 'git',
-							url : e.target.url.value
-						}
-					});
-				});
-				$('body').append(modal);
-				modal.modal('show');
-			} else {
-				FRAPP.load(frapps[li.index()], {}, true);
-			}
+			if(li.attr('class') === 'add') FRAPPSMENU.add();	
+			else FRAPP.load(frapps[li.index()], {}, true);
 		});
 	});
 });
