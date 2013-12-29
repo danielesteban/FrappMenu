@@ -1,0 +1,20 @@
+<menu class="frapps clearfix">
+	{{#each this}}
+		<li>
+			<a>
+				{{#if icon}}
+					<img src="{{path}}/{{icon}}">
+				{{else}}
+					<span class="h3">{{i 'file'}}</span>
+				{{/if}}
+				<br>{{name}}
+			</a>
+		</li>
+	{{/each}}
+	<li class="add">
+		<a>
+			<span class="h3">{{i 'plus'}}</span>
+			<br>{{L 'addMore'}}
+		</a>
+	</li>
+</menu>
