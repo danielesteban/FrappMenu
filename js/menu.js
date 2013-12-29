@@ -83,12 +83,12 @@ MENU = {
 			e.stopPropagation();
 			e.preventDefault();
 			modal.modal('hide');
-			FRAPP.install({
+			FRAPP.load({
 				repository : {
 					type : 'git',
 					url : e.target.url.value
 				}
-			}, {}, FRAPP.close);
+			}, {}, true);
 		});
 	}
 };
