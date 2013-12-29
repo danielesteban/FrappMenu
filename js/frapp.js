@@ -36,8 +36,9 @@ window.addEventListener('frapp.init', function() {
 	/* Get & render installed Frapps */
 	FRAPP.installed(function(frapps) {
 		var engineFrapps = [
-				'https://github.com/danielesteban/FrappsMenu.git',
-				'https://github.com/danielesteban/FrappSignin.git'
+				'https://github.com/danielesteban/FrappInstaller.git',
+				'https://github.com/danielesteban/FrappSignin.git',
+				'https://github.com/danielesteban/FrappsMenu.git'
 			],
 			l = frapps.length;
 
