@@ -63,3 +63,42 @@ menu.frapps {
 		}
 	}
 }
+
+/* Modals */
+.modal#add {
+	.frapps, .sources {
+		.table {
+			margin-bottom: 0;
+		}
+		td {
+			vertical-align: middle;
+			&.text-right {
+				min-width: 100px;
+			}
+		}
+		img {
+			height: 30px;
+		}
+		tr {
+			button {
+				display: none;
+			}
+			&:hover {
+				button {
+					display: inline-block;
+				}
+				span.version {
+					display: none;
+				}
+			}
+		}
+	}
+	.sources {
+		.table > tbody > tr:first-child > td {
+			border-top: 0;
+		}
+	}
+	.help-block a {
+		cursor: pointer;
+	}
+}
