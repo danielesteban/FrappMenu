@@ -13,8 +13,9 @@
 		"jquery",
 		"bootstrap",
 		"handlebars",
-		"lang",
 		"less",
+		"lang",
+		"router",
 		"session"
 	],
 	"main" : "index.html"

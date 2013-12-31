@@ -2,19 +2,23 @@
 	{{#each this}}
 		<li>
 			<a>
-				{{#if icon}}
-					<img src="{{path}}/{{icon}}">
-				{{else}}
-					<span class="h3">{{i 'file'}}</span>
-				{{/if}}
-				<br>{{name}}
+				<span class="icon">
+					{{#if icon}}
+						<img src="{{path}}/{{icon}}">
+					{{else}}
+						<span class="h3">{{i 'file'}}</span>
+					{{/if}}
+				</span>
+				{{name}}
 			</a>
 		</li>
 	{{/each}}
 	<li class="add">
 		<a>
-			<span class="h3">{{i 'plus'}}</span>
-			<br>{{L 'addMore'}}
+			<span class="icon">
+				<span class="h3">{{i 'plus'}}</span>
+			</span>
+			{{L 'addMore'}}
 		</a>
 	</li>
 </menu>

@@ -1,0 +1,61 @@
+<div class="preferences row">
+	<div class="col-sm-4">
+		<div class="panel panel-default session">
+			<div class="panel-heading">{{L 'session'}}</div>
+			<div class="panel-body">
+				{{#if user}}
+					<img src="{{user.avatar_url}}" class="pull-left">
+					<div class="info">
+						<h5>{{user.name}}</h5>
+						<p class="text-muted login">{{user.login}}</p>
+						<p class="text-muted">
+							{{user.email}}
+						</p>
+						<p>
+							<a onclick="SESSION.signout();ROUTER.reload()">{{L 'signout'}}</a>
+						</p>
+
+					</div>	
+				{{else}}
+					<p>
+						<a onclick="SESSION.signin(ROUTER.reload.bind(ROUTER))">{{L 'signin'}}</a>
+					</p>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="panel panel-default sources">
+			<div class="panel-heading">{{L 'sources'}}</div>
+			<div class="panel-body">
+				<div class="well well-sm">
+					<table class="table">
+						<tbody>
+							{{#each sources}}
+								<tr>
+									<td width="70%">
+										<strong>{{name}}</strong><br>
+										<span class="text-muted">{{description}}</span><br>
+										<small class="text-muted">{{url}}</small>
+									</td>
+									<td class="text-right text-muted">
+										<span class="version">v{{version}}</span>
+										<button class="btn btn-danger">{{i 'remove'}}</button>
+									</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>	
+				<form>
+					<div class="input-group">
+						<input id="addSourceURL" class="form-control" name="url" placeholder="{{L 'sourceURL'}}...">
+						<span class="input-group-btn">
+							<button class="btn btn-default">{{L 'add'}}</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

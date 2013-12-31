@@ -1,6 +1,7 @@
 LANG = {
 	en : {
 		createYourOwn : 'Create your own',
+		preferences : 'Preferences',
 		all : 'All',
 		yourFrapps : 'Your Frapps',
 		addMore : 'Add More',
@@ -10,14 +11,23 @@ LANG = {
 		createNew : 'Create New Frapp',
 		name : 'Name',
 		create : 'Create',
+		creating : 'Creating',
 		repoURL : 'Repository URL',
 		sourceURL : 'Source URL',
 		add : 'Add',
 		allFrappsInstalled : 'You have installed all the available Frapps in your sources',
-		areYouSure : 'Are you sure?'
+		areYouSure : 'Are you sure?',
+		session : 'Session',
+		signin : 'Sign-In with GitHub',
+		signout : 'Sign-Out',
+		sources : 'Sources',
+		storage : 'Storage',
+		frappsPath : 'Frapps folder',
+		save : 'Save'
 	},
 	es : {
 		createYourOwn : 'Crea una propia',
+		preferences : 'Preferencias',
 		all : 'Todas',
 		yourFrapps : 'Tus Frapps',
 		addMore : 'Añadir Más',
@@ -27,10 +37,18 @@ LANG = {
 		createNew : 'Crear Nueva Frapp',
 		name : 'Nombre',
 		create : 'Crear',
+		creating : 'Creando',
 		repoURL : 'URL del repositorio',
 		sourceURL : 'URL de la fuente',
 		add : 'Añadir',
 		allFrappsInstalled : 'Has instalado todas las Frapps disponibles en tus fuentes',
-		areYouSure : '¿Estás seguro?'
+		areYouSure : '¿Estás seguro?',
+		session : 'Sesión',
+		signin : 'Iniciar sesión con GitHub',
+		signout : 'Cerrar sesión',
+		sources : 'Fuentes',
+		storage : 'Almacenamiento',
+		frappsPath : 'Carpeta de Frapps',
+		save : 'Guardar'
 	}
 };
