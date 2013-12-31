@@ -132,7 +132,7 @@ MENU = {
 			var engineFrapps = [
 					'https://github.com/danielesteban/FrappInstaller.git',
 					'https://github.com/danielesteban/FrappSignin.git',
-					'https://github.com/danielesteban/FrappsMenu.git'
+					'https://github.com/danielesteban/FrappMenu.git'
 				];
 
 			MENU.frapps = [];
@@ -144,11 +144,16 @@ MENU = {
 	},
 	render : function(user, reload) {
 		var render = function(frapps) {
-				$('section div.container').empty().append(Handlebars.partials.menu(frapps));
+				$('section div.container').empty().append(Handlebars.partials.menu({
+					frapps : frapps,
+					user : user
+				}));
 				$('menu.frapps a').click(function(e) {
 					var li = $(e.target).parents('li').first();
-					if(li.attr('class') === 'add') FRAPPS.add();	
-					else FRAPP.load(frapps[li.index()], {}, true);
+					if(li.attr('class') === 'add') {
+						if(user) FRAPPS.create();
+						else FRAPPS.add();
+					} else FRAPP.load(frapps[li.index()], {}, true);
 				}).bind('contextmenu', function(e) {
 					var li = $(e.target).parents('li').first();
 					if(li.attr('class') === 'add') return;

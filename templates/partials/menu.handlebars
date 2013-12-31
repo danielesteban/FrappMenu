@@ -1,5 +1,5 @@
 <menu class="frapps clearfix">
-	{{#each this}}
+	{{#each frapps}}
 		<li>
 			<a>
 				<span class="icon">
@@ -18,7 +18,11 @@
 			<span class="icon">
 				<span class="h3">{{i 'plus'}}</span>
 			</span>
-			{{L 'addMore'}}
+			{{#if user}}
+				{{L 'createOne'}}
+			{{else}}
+				{{L 'addMore'}}
+			{{/if}}
 		</a>
 	</li>
 </menu>
